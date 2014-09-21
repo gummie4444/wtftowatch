@@ -1,0 +1,73 @@
+
+html,body
+ {
+ 	background:#34495e;
+ 	font-family: Lato, sans-serif;
+ }
+
+ .wrapper{
+ 	margin-top: 3em;
+ 	width:85%;
+ 	height:80%;
+ 	margin-left: auto;
+ 	margin-right: auto;
+
+ 	text-align: center;
+ }
+
+ .wrapper input{
+ 	margin: 10px;
+
+ }
+
+ .wrapper span{
+
+ 	font-size: 3em;
+ 	color:white;
+
+
+ }
+
+ #text_input{
+ 	height:80px;
+ 	font-size: 1.5em;
+ 	width:50%;
+ 	text-align: center;
+ 	background: #34495e;
+ 	color:#E8850C;
+ 	font-weight: bold;
+ 	border-width: 2px;
+
+ }
+
+  #submit_input{
+  	font-weight: bold;
+ 	height:60px;
+ 	font-size: 1.6em;
+ 	width:40%;
+ 	text-align: center;
+ 	background: #E8850C;
+ 	border:0;
+ 	color:white;
+ 	cursor: pointer;
+ }
+
+ #submit_input:hover{
+ 	opacity: 0.3;
+ }
+
+ ::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
+}
