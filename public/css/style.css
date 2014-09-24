@@ -82,6 +82,7 @@ html,body
 }
 
 .links a{
+  cursor: pointer;
 	text-decoration: none;
 }
 /* unvisited link */
