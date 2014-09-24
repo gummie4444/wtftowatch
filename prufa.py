@@ -71,7 +71,7 @@ def somefunc(genre,ratings):
 					tempString =""
 				
 			if It_true:
-				tempMovie = movie[0:len(movie)-len(tempGenre)]
+				tempMovie = movie[0:len(movie)-(len(tempGenre)+1)]
 
 				It_true = False
 				break;
@@ -162,6 +162,7 @@ def somefunc(genre,ratings):
 			tempMovie_rat =""
 			letterIndex_rat = 0	
 		else:
+
 			boolVote_rat = False
 			boolGrade_rat = False
 			tempString_rat = ""
@@ -170,44 +171,52 @@ def somefunc(genre,ratings):
 			tempMovie_rat =""
 			letterIndex_rat = 0
 
-	jk = json.dumps(tempDict)
-	kk = open('Pre_rating_votes.json','w')
-	kk.write(jk)
-	kk.close()
 
 
 	#if grade<6,5 or votes<500
+	print " lengd: " + str(len(tempDict.items()))
 
+	#vars
 	has_rating = False
 	has_votes = False
-	delcounter = 0
+
 	print "Starting to sort the movies bro"
+
+	#FORMAT OF DICT
+
+	"""
+	tempDict = {"movie":{rating: ["5.3"] , votes : ["6333"] , genre: ["Action","hero"]},"nextmovie" ...... }
+	"""
+	#Loop through all the keys (movies)
 	for keys, values in tempDict.items():
+
+
+		#loop throgh all the types in the keys
+		#Not all movies have rating and votes so check if they have it
+		has_rating = False
+		has_votes = False
 		for types in values:
 			if types == 'rating':
 				has_rating = True
 			if types == 'votes':
 				has_votes = True
 
-		if has_rating and has_votes:
-			if float(values["rating"][0])< 5.0 or int(values["votes"][0])<3000:
-				del tempDict[keys]
-				delcounter = delcounter +1
-		else:
-			del tempDict[keys]
-			delcounter = delcounter +1
+		#If they have both rating and votes, check if they fullfill the conditions
+		if has_rating == False or has_votes == False:
+			tempDict.pop(keys, None)
 
-		has_rating = False
-		has_votes = False
+		elif has_rating == True and has_votes == True:
+			if float(values['rating'][0])< 5.0 or int(values['votes'][0])<3000:
+				#del from the tempdict
+				tempDict.pop(keys, None)
+				
 
-	j = json.dumps(tempDict)
-	k = open('After_rating_votes.json','w')
-	k.write(j)
-	k.close()
-
-	print delcounter
+	with open('movies.json', 'wb') as fp:
+		json.dump(str(tempDict), fp)
 
 
 
 
 somefunc("genres.list","ratings.list")
+
+		 	

@@ -2,31 +2,106 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Tölvuviðgerðir Guðmundar</title>
+	<title>wtftowatchbro</title>
+
 		
 	<link rel="stylesheet" href="style.css" type="text/css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
-	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+
+	
+	<script type="text/javascript" src="photoService.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
 
 </head>
-<body>
+<body ng-app = "myApp" ng-controller = "MainCtrl" >
 
-	<div class ="wrapper">
-		<form>
+	<div id="loadingIcon" ng-show="mainLoading">
+				<div class="spinner">
+					  <div class="spinner-container container1">
+					    <div class="circle1"></div>
+					    <div class="circle2"></div>
+					    <div class="circle3"></div>
+					    <div class="circle4"></div>
+					  </div>
+					  <div class="spinner-container container2">
+					    <div class="circle1"></div>
+					    <div class="circle2"></div>
+					    <div class="circle3"></div>
+					    <div class="circle4"></div>
+					  </div>
+					  <div class="spinner-container container3">
+					    <div class="circle1"></div>
+					    <div class="circle2"></div>
+					    <div class="circle3"></div>
+					    <div class="circle4"></div>
+					  </div>
+					</div>
+	</div>
+	<div class ="wrapper" ng-show = "!mainLoading">
+		<form ng-hide = "clicked">
+			
 			</br>
 
-			<input id ="text_input" type= "text" placeholder = "WHAT KIND OF FOCKING MOVIE??">
+			<input auto-complete ui-items = "genres" ng-model = "selected_genre" id ="text_input" type= "text" placeholder = "WHAT KIND OF FOCKING MOVIE??" >
+
 			</br>
-			<input id = "submit_input" type = "submit" value="FIND ME A FOCKING MOVIE">
+			<button id = "submit_input"  ng-click = "findMovie(true)">FIND ME A FOCKING MOVIE</button>
 
 		</form>
+		<div class = "movie" ng-show = "clicked">
+			<h2> HOW ABOUT YOU WATCH</h2>
+			<h1>{{movieTitle}}</h1>
+
+			
+			<div id="loadingIcon" ng-show="Photoloading">
+				<div class="spinner">
+					  <div class="spinner-container container1">
+					    <div class="circle1"></div>
+					    <div class="circle2"></div>
+					    <div class="circle3"></div>
+					    <div class="circle4"></div>
+					  </div>
+					  <div class="spinner-container container2">
+					    <div class="circle1"></div>
+					    <div class="circle2"></div>
+					    <div class="circle3"></div>
+					    <div class="circle4"></div>
+					  </div>
+					  <div class="spinner-container container3">
+					    <div class="circle1"></div>
+					    <div class="circle2"></div>
+					    <div class="circle3"></div>
+					    <div class="circle4"></div>
+					  </div>
+					</div>
+			</div>
+			<img id ="movie_poster" ng-src="{{moviePhoto}}" alt="Movie-poster" ng-show ="!Photoloading">
+
+			<div class = "linkwrapper">
+				<div class ="links">
+					<a ng-click = "findMovie(true)">THAT LOOKS LIKE SHIT!</button>
+
+				</div>
+				<div class ="links">
+					<a href="#">NO I DONT WANT TO WATCH A {{selected_genre}} TYPE</a>
+				</div>
+				<div class ="links">
+					<a href="#">BRO I WANT TO WATCH A TV-SHOW</a>
+				</div>
+			</div>		
+
+		</div>
+
+
 
 
 	</div>
-
 </body>
 
 
