@@ -1,0 +1,9 @@
+{
+	"quotmark": "single",
+	"strict": true,
+	"node": true,
+	"newcap": true,
+	"indent": 4,
+	"camelcase": true,
+	"eqeqeq": true
+}
