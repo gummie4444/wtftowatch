@@ -9,7 +9,7 @@ angular.module('photoService',[])
              return $http.get('http://www.omdbapi.com/?t='+title+'&y='+year)               
         },
         getAllFiles: function(){
-             return $http.get('movies.json')
+             return $http.get('movies.JSON')
            }
       };
     })
