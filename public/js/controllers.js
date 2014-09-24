@@ -47,8 +47,16 @@ $scope.mainLoading = true
         
         photoService.getPhoto(yearTitleList[0],yearTitleList[1]).success(function(data){
 
-        $scope.moviePhoto=data.Poster
-        $scope.Photoloading = false;
+            if (typeof data.Poster == 'undefined'){
+                console.log("profa")
+                $scope.moviePhoto= 'http://static.guim.co.uk/sys-images/Guardian/About/General/2013/7/15/1373899329075/Nicolas-Cage-010.jpg'
+            }
+            else{
+                //todo load the movie ajax
+                $scope.moviePhoto=data.Poster;
+
+             }
+             $scope.Photoloading = false;
         });
     }
 
