@@ -5,7 +5,9 @@ Run npm install to install the latest dependencies an then run
 `gulp`. You can view the site at `http.//localhost:8080`.
 
 Version 0.01 = everything static exept posters
+
 Version 0.02 = movies collected with ajax calls
+
 Version 0.03 = Genres implement
 
 ##TODO##
