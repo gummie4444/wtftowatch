@@ -1,0 +1,17 @@
+{
+  "name": "wtftowatch",
+  "version": "0.0.0",
+  "homepage": "https://github.com/halldorbjarni/wtftowatch",
+  "authors": [
+    "Guðmundur Egill Bergsteinsson <geb12@hi.is>",
+    "Halldór Bjarni Þórhallsson <halldorbjarni@gmail.com>"
+  ],
+  "description": "A random generator for movies",
+  "main": "index.html",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.25",
+    "jquery": "~2.1.1",
+    "jquery-ui": "~1.11.1"
+  }
+}

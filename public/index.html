@@ -3,23 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>wtftowatchbro</title>
-
-		
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+  	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
-
-	
-	<script type="text/javascript" src="js/photoService.js"></script>
-	<script type="text/javascript" src="js/controllers.js"></script>
-	<script type="text/javascript" src="js/directives.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-
-
-  <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
-
+  	<!-- bower:css -->
+  	<!-- endbower -->
 </head>
 <body ng-app = "myApp" ng-controller = "MainCtrl" >
 
@@ -47,7 +35,7 @@
 	</div>
 	<div class ="wrapper" ng-show = "!mainLoading">
 		<form ng-hide = "clicked">
-			
+
 			</br>
 
 			<input auto-complete ui-items = "genres" ng-model = "selected_genre" id ="text_input" type= "text" placeholder = "WHAT KIND OF FOCKING MOVIE??" >
@@ -60,7 +48,7 @@
 			<h2> HOW ABOUT YOU WATCH</h2>
 			<h1>{{movieTitle}}</h1>
 
-			
+
 			<div id="loadingIcon" ng-show="Photoloading">
 				<div class="spinner">
 					  <div class="spinner-container container1">
@@ -96,14 +84,21 @@
 				<div class ="links">
 					<a href="#">BRO I WANT TO WATCH A TV-SHOW</a>
 				</div>
-			</div>		
+			</div>
 
 		</div>
 
-
-
-
 	</div>
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+	<!-- endbower -->
+
+  	<script type="text/javascript" src="js/photoService.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	<script type="text/javascript" src="js/directives.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 
 
