@@ -28,9 +28,9 @@ $scope.mainLoading = true
     
     //loaders
     $scope.mainLoading = false
-    $scope.Photoloading = true;
-    
+    $scope.Photoloading = false;
     $scope.clicked = false
+    
     $scope.moviePhoto = ""
     var dataList = []
     var yearTitleList = []

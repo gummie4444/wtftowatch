@@ -1,4 +1,5 @@
-<!DOCKTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -31,16 +32,14 @@
 					    <div class="circle3"></div>
 					    <div class="circle4"></div>
 					  </div>
-					</div>
+				</div>
 	</div>
 	<div class ="wrapper" ng-show = "!mainLoading">
 		<form ng-hide = "clicked">
-
-			</br>
-
+			<br>
 			<input auto-complete ui-items = "genres" ng-model = "selected_genre" id ="text_input" type= "text" placeholder = "WHAT KIND OF FOCKING MOVIE??" >
 
-			</br>
+			<br>
 			<button id = "submit_input"  ng-click = "findMovie(true)">FIND ME A FOCKING MOVIE</button>
 
 		</form>
@@ -69,13 +68,13 @@
 					    <div class="circle3"></div>
 					    <div class="circle4"></div>
 					  </div>
-					</div>
+				</div>
 			</div>
 			<img id ="movie_poster" ng-src="{{moviePhoto}}" alt="Movie-poster" ng-show ="!Photoloading">
 
 			<div class = "linkwrapper">
 				<div class ="links">
-					<a ng-click = "findMovie(true)">THAT LOOKS LIKE SHIT!</button>
+					<a ng-click = "findMovie(true)">THAT LOOKS LIKE SHIT!</a>
 
 				</div>
 				<div class ="links">
@@ -95,10 +94,10 @@
 	<script src="bower_components/jquery-ui/jquery-ui.js"></script>
 	<!-- endbower -->
 
-  	<script type="text/javascript" src="js/photoService.js"></script>
-	<script type="text/javascript" src="js/controllers.js"></script>
-	<script type="text/javascript" src="js/directives.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+  	<script src="js/photoService.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/app.js"></script>
 </body>
 
 
