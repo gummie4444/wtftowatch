@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import json
+import io
 
 def somefunc(genre,ratings):
 	#open the docs
@@ -153,7 +154,6 @@ def somefunc(genre,ratings):
 			tempDict[tempMovie_rat]["rating"].append(tempGrade_rat)
 			tempDict[tempMovie_rat]["votes"].append(tempVotes_rat)
 			#set the vars to start value
-			print tempDict[tempMovie_rat]
 			boolVote_rat = False
 			boolGrade_rat = False
 			tempString_rat = ""
@@ -213,8 +213,9 @@ def somefunc(genre,ratings):
 
 	#solve the isue with that there is a utf-8 unicode error if i dont add str() to the dict..
 	#TODO
-	with open('movies.json', 'wb') as fp:
-		json.dump(str(tempDict), fp)
+
+	with open('movies4.json', 'w') as f:
+ 		json.dump(tempDict, f, ensure_ascii=False)
 
 
 
