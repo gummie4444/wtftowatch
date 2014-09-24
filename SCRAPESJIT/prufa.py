@@ -211,6 +211,8 @@ def somefunc(genre,ratings):
 				tempDict.pop(keys, None)
 				
 
+	#solve the isue with that there is a utf-8 unicode error if i dont add str() to the dict..
+	#TODO
 	with open('movies.json', 'wb') as fp:
 		json.dump(str(tempDict), fp)
 
