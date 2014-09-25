@@ -6,15 +6,12 @@ Run npm install to install the latest dependencies an then run
 
 ~~Version 0.01 = everything static exept posters~~
 
-Version 0.02 = movies collected with ajax calls
+~~Version 0.02 = movies collected with ajax calls~~
 
 Version 0.03 = Genres implement
 
 ##TODO##
 
-NEXT for version 0.02:
-
-Get the json file to a server and only get the information about the random movie selected
 
 NEXT for version 0.03:
 
@@ -26,6 +23,8 @@ Custom things:
 - Make the look cooler
 - link to youtube trailer?
 - link to imdb?
+- check witch photos do not have a poster and find a diffrent poster
+- save poster url into database to minimize secound api call
 
 
 Everything
