@@ -45,10 +45,10 @@
 		</form>
 		<div class = "movie" ng-show = "clicked">
 			<h2> HOW ABOUT YOU WATCH</h2>
-			<h1>{{movieTitle}}</h1>
-
+			
 
 			<div id="loadingIcon" ng-show="Photoloading">
+
 				<div class="spinner">
 					  <div class="spinner-container container1">
 					    <div class="circle1"></div>
@@ -70,18 +70,21 @@
 					  </div>
 				</div>
 			</div>
+			<h1 ng-show = "!Photoloading">{{movieTitle}}</h1>
 			<img id ="movie_poster" ng-src="{{moviePhoto}}" alt="Movie-poster" ng-show ="!Photoloading">
 
 			<div class = "linkwrapper">
-				<div class ="links">
-					<a ng-click = "findMovie(true)">THAT LOOKS LIKE SHIT!</a>
 
-				</div>
 				<div class ="links">
 					<a href="#">NO I DONT WANT TO WATCH A {{selected_genre}} TYPE</a>
 				</div>
 				<div class ="links">
-					<a href="#">BRO I WANT TO WATCH A TV-SHOW</a>
+					<a ng-click = "findMovie(true)">THAT LOOKS LIKE SHIT!</a>
+
+				</div>
+				
+				<div class ="links">
+					<a href="#">HOW ABOUT A MOVIE WITH {{custom_actor}}</a>
 				</div>
 			</div>
 

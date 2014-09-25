@@ -6,10 +6,13 @@ angular.module('photoService',[])
         getPhoto: function(title,year) {
              //return the promise directly.
              console.log(title + " " + year)
-             return $http.get('http://www.omdbapi.com/?t='+title+'&y='+year)               
+             return $http.get('http://www.omdbapi.com/?t='+title+'&y='+year)     
         },
         getAllFiles: function(){
-             return $http.get('movies.JSON')
+             return $http.get('movies.json')
+           },
+        getMovies: function(){
+             return $http.get('/api/get_movie')
            }
       };
     })

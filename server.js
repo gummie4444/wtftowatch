@@ -3,9 +3,12 @@
 var express = require ('express');
 var app  = express();
 var port = process.env.Port || 8080;
+var mongoose = require('mongoose'); 					// mongoose for mongodb
 
 app.set('title', 'WTFTOWATCH');
 
+
+mongoose.connect('mongodb://gummi:gummi@ds039850.mongolab.com:39850/movies'); 	// connect to mongoDB database TODO CREATE A OWN DB FROM THE OWN SERVER
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
