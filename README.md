@@ -1,6 +1,11 @@
 wtftowatch version 0.00
 ==========
 
+Scrapes the database of imdb website and turnes it into a random movie generator
+
+Demo: `https://notendur.hi.is/~geb12/testmovie/`.
+
+
 Run npm install to install the latest dependencies an then run
 `gulp`. You can view the site at `http.//localhost:8080`.
 
